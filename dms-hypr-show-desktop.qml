@@ -9,8 +9,14 @@ PluginComponent {
 
     layerNamespacePlugin: "show-desktop"
 
-    readonly property string defaultScriptPath: "/home/lpv/.config/DankMaterialShell/plugins/dms-hypr-show-desktop/assets/show-desktop.sh"
-    readonly property string scriptPath: (pluginData.scriptPath || defaultScriptPath).trim()
+    readonly property string defaultScriptPath: "$HOME/.config/DankMaterialShell/plugins/dms-hypr-show-desktop/assets/show-desktop.sh"
+    readonly property string scriptPath: {
+        const rawPath = (pluginData.scriptPath || defaultScriptPath).trim()
+        const homeDir = Quickshell.env("HOME") || ""
+        if (rawPath.startsWith("$HOME/") && homeDir.length > 0)
+            return homeDir + rawPath.substring(5)
+        return rawPath
+    }
     readonly property string showDesktopButton: (pluginData.showDesktopButton || "middle").toLowerCase()
     readonly property string toggleOverviewButton: (pluginData.toggleOverviewButton || "right").toLowerCase()
     readonly property string iconName: pluginData.iconName || "desktop_windows"

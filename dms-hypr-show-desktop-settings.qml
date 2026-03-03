@@ -39,9 +39,9 @@ PluginSettings {
     StringSetting {
         settingKey: "scriptPath"
         label: "Script Path"
-        description: "Path to the show-desktop script."
-        placeholder: "/home/lpv/.config/DankMaterialShell/plugins/dms-hypr-show-desktop/assets/show-desktop.sh"
-        defaultValue: "/home/lpv/.config/DankMaterialShell/plugins/dms-hypr-show-desktop/assets/show-desktop.sh"
+        description: "Path to the show-desktop script. Only change if you want to place the script elsewhere."
+        placeholder: "$HOME/.config/DankMaterialShell/plugins/dms-hypr-show-desktop/assets/show-desktop.sh"
+        defaultValue: "$HOME/.config/DankMaterialShell/plugins/dms-hypr-show-desktop/assets/show-desktop.sh"
     }
 
     SelectionSetting {
