@@ -1,0 +1,16 @@
+{
+  "id": "showDesktop",
+  "name": "Show Desktop",
+  "description": "Cliackable icon that hides your windows to a special workspace and restores them. Hyprland only.",
+  "version": "1.0.0",
+  "author": "lpv11",
+  "icon": "desktop_windows",
+  "type": "widget",
+  "component": "./dms-hypr-show-desktop.qml",
+  "settings": "./dms-hypr-show-desktop-settings.qml",
+  "permissions": [
+    "process",
+    "settings_read",
+    "settings_write"
+  ]
+}
